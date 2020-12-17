@@ -5,8 +5,6 @@ module.exports = async function(context, req) {
 	const url = req.query.url || (req.body && req.body.url);
 	context.log(`Analyzing URL ${url}`);
 
-	context.log(`Chromium path: ${process.env.CHROMIUM_PATH}`);
-
 	// Use Puppeteer
 	//https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#puppeteerlaunchoptions
 	const browser = await puppeteer.launch({
